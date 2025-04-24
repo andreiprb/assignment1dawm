@@ -5,7 +5,7 @@ import { CoffeeService } from '../../services/coffee.service';
 import { CoffeeCardComponent } from '../coffee-card/coffee-card.component';
 import { Coffee } from '../../models/coffee.model';
 
-@Component({a
+@Component({
   selector: 'app-coffee-list',
   standalone: true,
   imports: [CommonModule, FormsModule, CoffeeCardComponent],
