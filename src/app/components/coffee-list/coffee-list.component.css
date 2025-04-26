@@ -28,14 +28,23 @@
   outline: none;
 }
 
+.relative {
+  position: relative;
+}
+
 .search-icon {
   position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #A1887F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   pointer-events: none;
+  color: #8D6E63;
 }
+
 
 .grid {
   display: grid;
