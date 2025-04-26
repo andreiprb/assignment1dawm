@@ -9,9 +9,10 @@ import { HeaderComponent } from '../../components/header/header.component';
   template: `
     <app-header></app-header>
 
-    <main class="pt-32 pb-16">
-      <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold mb-8 text-center text-brown-800">About Coffee Heaven</h1>
+    <div class="pt-24 bg-brown-50 min-h-screen">
+      <br><br><br>
+      <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold mb-12 text-center text-brown-800">About Coffee Heaven</h1>
 
         <div class="max-w-3xl mx-auto">
           <p class="text-lg mb-6">
@@ -53,7 +54,7 @@ import { HeaderComponent } from '../../components/header/header.component';
           </p>
         </div>
       </div>
-    </main>
+    </div>
 
     <footer class="bg-brown-900 text-white py-8">
       <div class="container mx-auto px-4 text-center">
@@ -70,6 +71,9 @@ import { HeaderComponent } from '../../components/header/header.component';
     }
     .bg-brown-900 {
       background-color: #3E2723;
+    }
+    .bg-brown-50 {
+      background-color: #EFEBE9;
     }
   `]
 })

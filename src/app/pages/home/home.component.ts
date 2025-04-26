@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { CoffeeListComponent } from '../../components/coffee-list/coffee-list.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, CoffeeListComponent],
+  imports: [CommonModule, HeaderComponent, CoffeeListComponent, RouterLink],
   template: `
     <app-header #header></app-header>
 
@@ -20,7 +21,7 @@ import { CoffeeListComponent } from '../../components/coffee-list/coffee-list.co
           <p class="text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-lg">
             Discover our handcrafted coffees made with premium beans from around the world.
           </p>
-          <button class="bg-brown-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-brown-700 transition-colors">
+          <button routerLink="/menu" class="menu-button bg-brown-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-brown-700 transition-all">
             View Our Menu
           </button>
         </div>
@@ -64,7 +65,7 @@ import { CoffeeListComponent } from '../../components/coffee-list/coffee-list.co
             <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
             <p>123 Coffee Street</p>
             <p>Brewville, CB 43210</p>
-            <p>info[at]coffeeheaven.com</p>
+            <p>info&#64;coffeeheaven.com</p>
           </div>
           <div>
             <h3 class="text-xl font-semibold mb-4">Hours</h3>
@@ -80,6 +81,21 @@ import { CoffeeListComponent } from '../../components/coffee-list/coffee-list.co
     </footer>
   `,
   styles: [`
+    .menu-button {
+      border: none;
+      outline: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .menu-button:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+      outline: none;
+    }
+    .menu-button:active {
+      background-color: #3E2723 !important; /* brown 900 - și mai închis */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* shadow mai adânc */
+      transform: scale(0.97); /* ușoară micșorare la click, pentru senzație de apăsare */
+    }
     .bg-brown-600 {
       background-color: #795548;
     }
