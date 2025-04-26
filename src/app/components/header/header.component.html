@@ -1,1 +1,17 @@
-<p>header works!</p>
+<header class="fixed-header semi-transparent-header text-white p-4 w-full z-50" style="z-index: 100">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center" style="position: relative;">
+    <div class="order-info mt-4 md:mt-0" *ngIf="selectedCoffee()">
+      <p>Selected: {{ selectedCoffee() }}</p>
+    </div>
+    <div class="logo mb-4 md:mb-0">
+      <h1 class="text-3xl font-bold logo-text">Coffee Heaven</h1>
+    </div>
+
+    <nav class="flex space-x-6">
+      <a routerLink="/" class="nav-link hover:text-brown-300">Home</a>
+      <a routerLink="/about" class="nav-link hover:text-brown-300">About</a>
+      <a routerLink="/menu" class="nav-link hover:text-brown-300">Menu</a>
+      <a routerLink="/contact" class="nav-link hover:text-brown-300">Contact</a>
+    </nav>
+  </div>
+</header>

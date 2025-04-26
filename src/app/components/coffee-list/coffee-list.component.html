@@ -1,1 +1,38 @@
-<p>coffee-list works!</p>
+<section class="py-12 bg-brown-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 text-brown-800">Our Special Coffee</h2>
+
+    <div class="mb-8 max-w-md mx-auto">
+      <div class="relative">
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="onSearch()"
+          placeholder="Search coffee..."
+          class="search-input"
+        >
+        <span class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (coffee of coffeeService.getFilteredCoffees(); track coffee.id) {
+        <app-coffee-card
+          [coffee]="coffee"
+          (orderCoffee)="onOrderCoffee($event)"
+        ></app-coffee-card>
+      }
+
+      @empty {
+        <div class="col-span-full text-center py-8">
+          <p class="text-gray-500 text-lg">No coffee found matching your search.</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

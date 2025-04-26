@@ -1,0 +1,58 @@
+.coffee-card {
+  transition: transform 0.3s ease;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.description {
+  flex-grow: 1;
+}
+
+.coffee-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-button {
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* shadow discret */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.order-button:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  outline: none;
+  background-color: #5D4037;
+}
+
+.order-button:active {
+  background-color: #3E2723 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transform: scale(0.97);
+}
+
+.bg-brown-600 {
+  background-color: #795548;
+}
+
+.bg-brown-900 {
+  background-color: #3E2723;
+}
+
+.text-brown-800 {
+  color: #4E342E;
+}
+
+.text-brown-200 {
+  color: #BCAAA4;
+}
