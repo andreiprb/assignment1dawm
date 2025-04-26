@@ -5,7 +5,6 @@ import { Coffee } from '../models/coffee.model';
   providedIn: 'root'
 })
 export class CoffeeService {
-  // Using signal for coffee list
   private coffees = signal<Coffee[]>([
     {
       id: 1,
@@ -51,17 +50,10 @@ export class CoffeeService {
     }
   ]);
 
-  // Signal for search query
   private searchQuery = signal<string>('');
 
   constructor() { }
 
-  // Get all coffees
-  getAllCoffees() {
-    return this.coffees;
-  }
-
-  // Get filtered coffees based on search query
   getFilteredCoffees() {
     const query = this.searchQuery();
     const allCoffees = this.coffees();
@@ -75,13 +67,7 @@ export class CoffeeService {
     );
   }
 
-  // Update search query
   setSearchQuery(query: string) {
     this.searchQuery.set(query);
-  }
-
-  // Get current search query
-  getSearchQuery() {
-    return this.searchQuery;
   }
 }

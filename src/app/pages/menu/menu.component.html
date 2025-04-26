@@ -1,1 +1,16 @@
-<p>menu works!</p>
+<app-header #header></app-header>
+
+<div class="pt-24 bg-brown-50 min-h-screen">
+  <br><br><br>
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold mb-12 text-center text-brown-800">Our Menu</h1>
+
+    <app-coffee-list (coffeeSelected)="handleCoffeeSelected($event)"></app-coffee-list>
+  </div>
+</div>
+
+<footer class="bg-brown-900 text-white py-8">
+  <div class="container mx-auto px-4 text-center">
+    <p>&copy; 2025 Coffee Heaven. All rights reserved.</p>
+  </div>
+</footer>

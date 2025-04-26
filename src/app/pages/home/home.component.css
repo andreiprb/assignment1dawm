@@ -1,0 +1,49 @@
+.menu-button {
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.menu-button:active {
+  background-color: #3E2723 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transform: scale(0.97);
+}
+
+.bg-brown-600 {
+  background-color: #795548;
+}
+
+.hover\:bg-brown-700:hover {
+  background-color: #5D4037;
+}
+
+.bg-brown-900 {
+  background-color: #3E2723;
+}
+
+.border-brown-700 {
+  border-color: #5D4037;
+}
+
+.text-brown-800 {
+  color: #4E342E;
+}
+
+.bg-brown-800 {
+  background-color: #4E342E;
+}
+
+.drop-shadow-lg {
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.4));
+}
+
+.bg-brown-100 {
+  background-color: #D7CCC8;
+}
