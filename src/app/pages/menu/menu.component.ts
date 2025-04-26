@@ -14,7 +14,6 @@ export class MenuComponent {
   @ViewChild('header') headerComponent!: HeaderComponent;
 
   handleCoffeeSelected(coffeeName: string) {
-    console.log(`Selected coffee from menu: ${coffeeName}`);
     this.headerComponent.updateSelectedCoffee(coffeeName);
   }
 }
