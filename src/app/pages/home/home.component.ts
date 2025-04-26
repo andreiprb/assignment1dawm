@@ -12,6 +12,7 @@ import { CoffeeListComponent } from '../../components/coffee-list/coffee-list.co
 
     <main>
       <section class="hero bg-cover bg-center py-20" style="background-image: url('assets/images/coffee-banner.jpg')">
+        <br><br>
         <div class="container mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
             Experience the Perfect Brew

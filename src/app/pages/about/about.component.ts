@@ -9,7 +9,7 @@ import { HeaderComponent } from '../../components/header/header.component';
   template: `
     <app-header></app-header>
 
-    <main class="py-16">
+    <main class="pt-32 pb-16">
       <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold mb-8 text-center text-brown-800">About Coffee Heaven</h1>
 

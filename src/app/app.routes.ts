@@ -12,11 +12,11 @@ export const routes: Routes = [
   },
   {
     path: 'menu',
-    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
+    loadComponent: () => import('./pages/menu/menu.component').then(m => m.MenuComponent)
   },
   {
     path: 'contact',
-    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
+    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
   },
   {
     path: '**',
