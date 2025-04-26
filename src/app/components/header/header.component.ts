@@ -8,7 +8,10 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   template: `
     <header class="fixed-header semi-transparent-header text-white p-4 w-full z-50" style="z-index: 100">
-      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center" style="position: relative;">
+        <div class="order-info mt-4 md:mt-0" *ngIf="selectedCoffee()">
+          <p>Selected: {{ selectedCoffee() }}</p>
+        </div>
         <div class="logo mb-4 md:mb-0">
           <h1 class="text-3xl font-bold logo-text">Coffee Heaven</h1>
         </div>
@@ -19,14 +22,25 @@ import { RouterModule } from '@angular/router';
           <a routerLink="/menu" class="nav-link hover:text-brown-300">Menu</a>
           <a routerLink="/contact" class="nav-link hover:text-brown-300">Contact</a>
         </nav>
-
-        <div class="order-info mt-4 md:mt-0" *ngIf="selectedCoffee()">
-          <p class="bg-brown-600 p-2 rounded">Selected: {{ selectedCoffee() }}</p>
-        </div>
       </div>
     </header>
   `,
   styles: [`
+    .order-info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+    .order-info p {
+      background: none !important;
+      color: #D7CCC8;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+    }
     .fixed-header {
       position: fixed;
       top: 0;
@@ -48,10 +62,10 @@ import { RouterModule } from '@angular/router';
       font-weight: 500;
     }
     .hover\\:text-brown-300:hover {
-      color: #3E2723;  /* Light brown on hover */
+      color: #3E2723;
     }
     .logo-text {
-      color: #D7CCC8; /* Light brown for logo text */
+      color: #D7CCC8;
     }
   `]
 })

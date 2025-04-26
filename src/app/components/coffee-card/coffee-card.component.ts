@@ -9,9 +9,9 @@ import { Coffee } from '../../models/coffee.model';
   template: `
     <div class="coffee-card bg-brown-900 rounded-lg shadow-md overflow-hidden">
       <img [src]="coffee().image" [alt]="coffee().name" class="w-full h-48 object-cover">
-      <div class="p-4">
+      <div class="p-4 card-content">
         <h3 class="text-xl font-semibold mb-2 text-white">{{ coffee().name }}</h3>
-        <p class="text-white mb-4">{{ coffee().description }}</p>
+        <p class="text-white mb-4 description">{{ coffee().description }}</p>
         <div class="flex justify-between items-center">
           <span class="text-lg font-bold text-white">{{ '$' + coffee().price.toFixed(2) }}</span>
           <button
@@ -25,6 +25,24 @@ import { Coffee } from '../../models/coffee.model';
     </div>
   `,
   styles: [`
+    .coffee-card {
+      transition: transform 0.3s ease;
+      position: relative;
+      min-height: 400px; /* Added min-height for consistent card size */
+      display: flex;
+      flex-direction: column;
+    }
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .description {
+      flex-grow: 1;
+    }
+    .coffee-card:hover {
+      transform: translateY(-5px);
+    }
     .order-button {
       border: none;
       outline: none;
@@ -42,13 +60,6 @@ import { Coffee } from '../../models/coffee.model';
       background-color: #3E2723 !important; /* brown 900 - și mai închis */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* shadow mai adânc */
       transform: scale(0.97); /* ușoară micșorare la click, pentru senzație de apăsare */
-    }
-    .coffee-card {
-      transition: transform 0.3s ease;
-      position: relative; /* ← adăugat */
-    }
-    .coffee-card:hover {
-      transform: translateY(-5px);
     }
     .bg-brown-600 {
       background-color: #795548;

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../components/header/header.component';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -60,7 +61,7 @@ import { HeaderComponent } from '../../components/header/header.component';
             <button
               type="submit"
               (click)="onSubmit()"
-              class="bg-brown-600 text-white px-6 py-3 rounded hover:bg-brown-700 transition-colors"
+              class="message-button bg-brown-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-brown-700 transition-all"
             >
               Send Message
             </button>
@@ -84,6 +85,23 @@ import { HeaderComponent } from '../../components/header/header.component';
     </footer>
   `,
   styles: [`
+    .message-button {
+      border: none;
+      outline: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease, background-color 0.3s ease;
+      text-transform: none !important;
+      font-weight: normal !important;
+    }
+    .message-button:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+      outline: none;
+    }
+    .message-button:active {
+      background-color: #3E2723 !important; /* brown 900 - și mai închis */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* shadow mai adânc */
+      transform: scale(0.97); /* ușoară micșorare la click, pentru senzație de apăsare */
+    }
     .bg-brown-50 {
       background-color: #EFEBE9;
     }
@@ -105,6 +123,42 @@ import { HeaderComponent } from '../../components/header/header.component';
     .focus\\:ring-brown-400:focus {
       --tw-ring-color: #8D6E63;
       --tw-ring-opacity: 1;
+    }
+
+    /* Form container îmbunătățit */
+    .max-w-2xl {
+      background-color: #ffffff;
+      padding: 3rem;
+      border-radius: 1rem; /* colțuri mai rotunjite */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* umbră mai difuză */
+      border: 1px solid #e0e0e0; /* contur foarte subtil */
+    }
+
+    /* Spacings mai aerisite între câmpuri */
+    form > div {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Inputuri și textarea mai elegante */
+    input[type="text"], input[type="email"], textarea {
+      border-radius: 0.75rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+      background-color: #fff;
+      border-color: #8D6E63;
+      box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.3);
+    }
+
+    /* Butonul de submit cu mici ajustări */
+    button[type="submit"] {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
   `]
 })
