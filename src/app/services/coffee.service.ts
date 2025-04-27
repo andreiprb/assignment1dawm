@@ -51,6 +51,7 @@ export class CoffeeService {
   ]);
 
   private searchQuery = signal<string>('');
+  private selectedCoffee = signal<string>('');
 
   constructor() { }
 
@@ -69,5 +70,13 @@ export class CoffeeService {
 
   setSearchQuery(query: string) {
     this.searchQuery.set(query);
+  }
+
+  setSelectedCoffee(coffeeName: string) {
+    this.selectedCoffee.set(coffeeName);
+  }
+
+  getSelectedCoffee() {
+    return this.selectedCoffee;
   }
 }
